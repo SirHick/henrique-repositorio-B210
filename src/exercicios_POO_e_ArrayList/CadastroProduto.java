@@ -1,4 +1,5 @@
 package exercicios_POO_e_ArrayList;
+import java.util.*;
 
 public class CadastroProduto {
 	
@@ -37,6 +38,41 @@ public class CadastroProduto {
 	}
 	
 	public void exibirDados() {
-		System.out.println("Nome produto: " + nome + " , preço: " + preco + " e possui " + qtd + " no estoque.");
+		System.out.println("Nome: " + nome);
+		System.out.println("Preço: " + preco);
+		System.out.println("Quantidade: " + qtd);
+	}
+	private ArrayList<CadastroProduto> lista = new ArrayList<>();
+
+	public ArrayList<CadastroProduto> getLista() {
+		return lista;
+	}
+
+	public void setLista(ArrayList<CadastroProduto> lista) {
+		this.lista = lista;
+	}
+
+	public void adicionar(String nome, double preco, int qtd) {
+		CadastroProduto novoProduto = new CadastroProduto(nome, preco, qtd);
+		lista.add(novoProduto);
+		System.out.println("Produto adicionado.");
+	}
+
+	public void listarTodos() {
+		if(lista.isEmpty()) {
+			System.out.println("Nenhum produto cadastrado.");
+			return;
+		}
+		System.out.println("=== Lista Produtos === ");
+		for(CadastroProduto total : lista) {
+			total.exibirDados();
+			System.out.println("-----------------------");
+		}
+		System.out.println("\n Total: " + lista.size() + " produtos");
+	}
+	
+	public void contarProduto()
+	{
+		
 	}
 }
