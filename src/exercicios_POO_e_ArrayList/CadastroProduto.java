@@ -63,7 +63,7 @@ public class CadastroProduto {
 			System.out.println("Nenhum produto cadastrado.");
 			return;
 		}
-		System.out.println("=== Lista Produtos === ");
+		System.out.println(" === Lista Produtos === ");
 		for(CadastroProduto total : lista) {
 			total.exibirDados();
 			System.out.println("-----------------------");
@@ -71,8 +71,18 @@ public class CadastroProduto {
 		System.out.println("\n Total: " + lista.size() + " produtos");
 	}
 	
-	public void contarProduto()
-	{
-		
+	public void contarProduto() {
+			if(lista.isEmpty()) {
+				System.out.println("A lista está vazia. Nenhum produto para contar.");
+				return;
+			}
+			
+			int totalEmEstoque = 0;
+			
+			for (CadastroProduto produto : lista) {
+				totalEmEstoque += produto.getQtd(); 
+			}
+			
+			System.out.println("Quantidade total de itens físicos no estoque: " + totalEmEstoque);
+		}
 	}
-}
