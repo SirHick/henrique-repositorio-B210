@@ -1,6 +1,6 @@
 package exercicios_heranca;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Scanner;
 
 public class SistemaEscolaMain {
