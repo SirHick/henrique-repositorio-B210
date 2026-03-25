@@ -28,11 +28,11 @@ public class Transporte {
 	}
 	
 	public double calcularCusto() {
-		return 0;
+		return 0.0;
 	}
 	
 	public void exibirDetalhes() {
-		System.out.println(" == DETALHES ==");
+		System.out.println(" == DETALHES DO TRANSPORTE ==");
 		System.out.println("Distância: " + distancia);
 		System.out.println("Quantidade de Passageiros: " + passageiros);
 	}
