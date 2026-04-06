@@ -11,13 +11,26 @@ public class PessoaMain {
 			System.out.println("Informe seu nome: ");
 			String nomeDig = aula.nextLine();
 			
-			System.out.println("informe a sua idade: ");
+			System.out.println("Informe a sua idade: ");
 			int idadeDig = aula.nextInt();
 			
-			Pessoa natalino = new Pessoa(nomeDig, idadeDig);
+			aula.nextLine();
+			
+			System.out.println("Digite o seu CPF: ");
+			String cpfDig = aula.nextLine();
+			
+			Pessoa natalino = new Pessoa(nomeDig, idadeDig, cpfDig);
 			
 			PessoaDAO natalinoDAO = new PessoaDAO();
 			natalinoDAO.inserir(natalino);
+			
+			//leitura do banco de dados
+			
+			List<Pessoa> lista = natalinoDAO.listar();
+			
+			for(Pessoa p : lista) {
+				System.out.println(p);
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
