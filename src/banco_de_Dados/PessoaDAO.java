@@ -11,7 +11,7 @@ public class PessoaDAO {
 	
 	//create 
 	public void inserir(Pessoa p) throws SQLException{
-		String sql = "INSERT INTO pessoas(nome, idade, cpf) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO pessoa(nome, idade, cpf) VALUES (?, ?, ?)";
 		//try com recursos
 		try(Connection conn = Conexao.conectar();
 				PreparedStatement stmt = conn.prepareStatement(sql)){
@@ -30,7 +30,7 @@ public class PessoaDAO {
 	public List<Pessoa> listar() throws SQLException{
 		
 		List <Pessoa> lista = new ArrayList<>();
-		String sql = "SELECT * FROM pessoas";
+		String sql = "SELECT * FROM pessoa";
 		
 		try (Connection conn = Conexao.conectar();
 				Statement stmt = conn.createStatement();
