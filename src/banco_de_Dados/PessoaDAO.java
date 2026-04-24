@@ -1,5 +1,4 @@
 package banco_de_Dados;
-
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ public class PessoaDAO {
 	
 	//create 
 	public void inserir(Pessoa p) throws SQLException{
-		String sql = "INSERT INTO pessoa(nome, idade, cpf) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO pessoas(nome, idade, cpf) VALUES (?, ?, ?)";
 		//try com recursos
 		try(Connection conn = Conexao.conectar();
 				PreparedStatement stmt = conn.prepareStatement(sql)){
@@ -50,39 +49,38 @@ public class PessoaDAO {
 		
 		return lista;
 	}
-	
 	//Update --> (Atualizar) nome e idade pelo ID
 	
-			public void atualizar (Pessoa p) throws SQLException{
-				
-				String sql = "UPDATE pessoa SET nome = ?, idade = ?, cpf = ? WHERE id = ?";
-				
-				try(Connection conn = Conexao.conectar();
-						PreparedStatement stmt = conn.prepareStatement(sql)){
-					
-					stmt.setString(1, p.getNome());
-					stmt.setInt(2, p.getIdade());
-					stmt.setString(3, p.getCPF());
-					stmt.setInt(4, p.getId());
-					
-					stmt.executeUpdate();
-					System.out.println("Dados Atualizados.");
-				}
-			}
+	public void atualizar (Pessoa p) throws SQLException{
+		
+		String sql = "UPDATE pessoa SET nome = ?, idade = ?, cpf = ? WHERE id = ?";
+		
+		try(Connection conn = Conexao.conectar();
+				PreparedStatement stmt = conn.prepareStatement(sql)){
 			
-		//Delete
-			public void excluit (int ID) throws SQLException{
-				String sql = "DELETE from pessoa WHERE id = ?";
-				
-				try(Connection conn = Conexao.conectar();
-						PreparedStatement stmt = conn.prepareStatement(sql)){
-					
-					stmt.setInt(1, ID);
-					
-					stmt.executeUpdate();
-					System.out.println("Dados Excluídos.");
-				
-			}
+			stmt.setString(1, p.getNome());
+			stmt.setInt(2, p.getIdade());
+			stmt.setString(3, p.getCPF());
+			stmt.setInt(4, p.getId());
+			
+			stmt.executeUpdate();
+			System.out.println("Dados Atualizados.");
+		}
+	}
+	
+//Delete
+	public void excluir (int ID) throws SQLException{
+		String sql = "DELETE from pessoa WHERE id = ?";
+		
+		try(Connection conn = Conexao.conectar();
+				PreparedStatement stmt = conn.prepareStatement(sql)){
+			
+			stmt.setInt(1, ID);
+			
+			stmt.executeUpdate();
+			System.out.println("Dados Excluídos.");
+		
+	}
 
 }
-			}
+	}

@@ -1,41 +1,120 @@
 package banco_de_Dados;
+import java.sql.SQLException;
 import java.util.*;
 public class PessoaMain {
 
 	public static void main(String[] args) {
 		
-		Scanner aula = new Scanner (System.in);
+Scanner aula = new Scanner (System.in);
 		
-		try {
+		PessoaDAO pessoaDAO = new PessoaDAO();
+		
+		int opcao;
+		
+		do {
+			System.out.println("=== MENU CRUD ===");
+			System.out.println("1. Inserir pessoa");
+			System.out.println("2. Listar Pessoa");
+			System.out.println("3. Atualizar pessoa");
+			System.out.println("4. Excluir pessoa");
+			System.out.println("0. SAIR");
 			
-			System.out.println("Informe seu nome: ");
-			String nomeDig = aula.nextLine();
+			System.out.println("Escolha uma opção: ");
 			
-			System.out.println("Informe a sua idade: ");
-			int idadeDig = aula.nextInt();
-			
+			opcao = aula.nextInt();
 			aula.nextLine();
 			
-			System.out.println("Digite o seu CPF: ");
-			String cpfDig = aula.nextLine();
+			switch(opcao) {
 			
-			Pessoa natalino = new Pessoa(nomeDig, idadeDig, cpfDig);
+			case 1:
+				try {
+					System.out.println("Nome: ");
+					String nome = aula.nextLine();
+					
+					System.out.println("Idade: ");
+					int idade = aula.nextInt();
+					aula.nextLine();
+					System.out.println("CPF: ");
+					String cpf = aula.nextLine();
+					
+					
+					
+					Pessoa novaPessoa = new Pessoa(nome, idade, cpf);
+					pessoaDAO.inserir(novaPessoa);
+					
+				}catch(SQLException e) {
+					
+				}
+				break;
+				
+			case 2:
+				try {
+					List<Pessoa> lista = pessoaDAO.listar();
+					
+					if(lista.isEmpty()) {
+						System.out.println("Nenhuma pessoa cadastrada.");
+					}else {
+						System.out.println("Lista de pessoas: ");
+						for(Pessoa p : lista) {
+							System.out.println(p);
+						}
+					}
+				}catch(SQLException e) {
+					System.out.println("Erro ao listar." + e.getMessage());
+				}
+			break;
 			
-			PessoaDAO natalinoDAO = new PessoaDAO();
-			natalinoDAO.inserir(natalino);
 			
-			//leitura do banco de dados
+			case 3:
+				try {
+					System.out.println("ID da pessoa: ");
+				int idAtualizar = aula.nextInt();
+				aula.nextLine();
+				
+				System.out.println("Novo nome: ");
+				String novoNome = aula.nextLine();
+				
+				System.out.println("Nova Idade: ");
+				int novaIdade = aula.nextInt();
+				aula.nextLine();
+				
+				System.out.println("Novo CPF: ");
+				String novoCPF = aula.nextLine();
+				
+				
+				Pessoa pessoaAtualizada = new Pessoa(idAtualizar, novoNome, novaIdade, novoCPF);
+				pessoaDAO.atualizar(pessoaAtualizada);
+				
+				}catch(SQLException e) {
+					System.out.println("Erro ao atualizar." + e.getMessage());
+				}
+			break;
 			
-			List<Pessoa> lista = natalinoDAO.listar();
-			
-			for(Pessoa p : lista) {
-				System.out.println(p);
+			case 4:
+				try {
+					System.out.println("ID para excluir: ");
+					int idExcluir = aula.nextInt();
+					aula.nextLine();
+					
+					pessoaDAO.excluir(idExcluir);
+				}catch(SQLException e) {
+					System.out.println("Erro ao excluir: " + e.getMessage());
 			}
+				break;
+				
+			case 0:
+				System.out.println("SAINDO...");
+				break;
+				
+			default:
+				System.out.println("Valor inválido!");
+                break; 
 			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-			aula.close();
-	}
+            } 
+            
+		} while(opcao != 0); 
+		
+        aula.close();
+	} 
 
 }
