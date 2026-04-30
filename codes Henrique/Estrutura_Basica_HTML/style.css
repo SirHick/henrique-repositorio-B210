@@ -26,10 +26,30 @@ body{
     16px --> desfoque (quanto maior, mais "suave" fica a sombra)
     rgba (0, 0, 0, 04) --> cor da sombra */
 
-nav {
+nav{
     background-color: rgb(93, 185, 0);
-    padding: 14px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    text-align: center;
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 20px; /* Cantos arredondados */
+    margin-bottom: 20px; /* Espaço abaixo do menu */
+    text-align: center; /* Centraliza os links */
+    font-weight: bold; /* Deixa a fonte em negrito */
+}
+
+nav a{
+    color: #ffff; /* Cor do texto  */
+    text-decoration: none; /* Remove sublinhado */
+    margin: 0 10px; /* Espaço entre os links */
+    font-weight: bold; /* Texto em negrito */
+}
+
+nav a:hover{
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse em cima */
+}
+
+h1{
+    font-size: 40px;
+    padding-left: 10px;
+    color: black;
+    border-left: 5px;
+    margin-bottom: 10px;
 }
