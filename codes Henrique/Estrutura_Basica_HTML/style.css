@@ -1,0 +1,35 @@
+* {
+    margin: 0; /* Margem */
+    padding: 0; /* Espaçamento interno*/
+}
+/* CORPO DA PÁGINA */
+body{
+    background-color:rgb(159, 224, 157); /* Cor de fundo*/
+     font-family: "Michroma", sans-serif;
+     color:black; /* Cor padrão do texto */
+     font-size: 16px; /* Tamanho padrão da fonte */
+     line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+/* CONTAINER PRINCIPAL */
+.container{
+    max-width: 1080px; /* Define largura máxima da página */
+    margin: 40px auto; /* Centraliza horizontalmente e dá espaço em cima/baixo */
+    padding: 40px; /* Espaçamento interno */
+    background-color: rgba(166, 219, 97); /* Cor do fundo */
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4); /* Sombra leve */
+}
+
+/* 0 --> deslocamento horizontal (não move para os lados)
+    4px --> deslocamento vertical (sombra desce 4px)
+    16px --> desfoque (quanto maior, mais "suave" fica a sombra)
+    rgba (0, 0, 0, 04) --> cor da sombra */
+
+nav {
+    background-color: rgb(93, 185, 0);
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
