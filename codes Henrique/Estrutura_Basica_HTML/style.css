@@ -72,3 +72,28 @@ p{
 strong{
     color:rgb(58, 184, 201);
 }
+
+/* texto em ênfase (itálico) */
+em{
+    color:#ff00ea;
+}
+
+/* Texto Marcado */
+mark{
+    background-color:#ff0000;
+}
+
+/* Linhas horizontais */
+hr{
+    margin: 20px 0; /* Espaço acima e abaixo */
+}
+
+/* linhas gerais */
+a{
+    color: #2600ff;
+}
+
+/* Link ao passar o mouse */
+a:hover{
+    color:#ff7300;
+}
