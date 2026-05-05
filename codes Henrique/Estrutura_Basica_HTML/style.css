@@ -97,3 +97,16 @@ a{
 a:hover{
     color:#ff7300;
 }
+
+/* Imagem */
+img{
+    max-width: 400px;
+    border-radius: 60%;
+    border: 3px solid color #ff7300;
+    margin: 15px 0;
+}
+
+/* LISTAS */
+ul, ol {
+    margin-left: 20px; /* recuo da lista */
+}
