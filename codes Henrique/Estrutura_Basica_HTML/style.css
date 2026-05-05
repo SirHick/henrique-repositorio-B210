@@ -53,3 +53,22 @@ h1{
     border-left: 5px;
     margin-bottom: 10px;
 }
+
+h2{
+    color:#00ffd5;
+    margin-top: 20px; /* Espaço acima */
+}
+
+h3{
+    color:#2600ff;
+    margin-top: 15px;
+}
+/* Parágrafos */
+p{
+    margin-bottom: 12px;
+}
+
+/* Texto em negrito */
+strong{
+    color:rgb(58, 184, 201);
+}
