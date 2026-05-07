@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Michroma", sans-serif;
+    background-color: #b7c8bb;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+/* CAIXA BRANCA */
+.container{
+    width: 480px;
+    background-color: white;
+
+    padding: 80px 40px 40px 40px;
+
+    position: relative;
+
+    box-shadow: 25px 25px 30px rgba(0,0,0,0.15);
+}
+
+/* TÍTULO AZUL */
+h1{
+    position: absolute;
+
+    top: -30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: #0d6c94;
+
+    color: white;
+    
+    padding: 30px 70px;
+
+    font-size: 24px;
+    font-weight: normal;
+
+    text-align: center;
+}
+
+/* INPUTS */
+.input-group{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* ÍCONES */
+.input-group i{
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: gray;
+}
+
+/* CAIXAS */
+.input-group input{
+    width: 100%;
+
+    padding: 18px 18px 18px 45px;
+
+    border: none;
+
+    background-color: #e5e5e5;
+
+    font-size: 16px;
+}
+
+/* BOTÃO */
+button{
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    background-color: #0d6c94;
+
+    color: white;
+
+    font-family: "Michroma", sans-serif;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}   
