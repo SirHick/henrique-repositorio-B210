@@ -16,7 +16,8 @@ public class SistemaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private int idade;
+    private String curso;
+    private String matricula;
     //Lombok gera tudo (getters e setters das variáveis)
 
 }

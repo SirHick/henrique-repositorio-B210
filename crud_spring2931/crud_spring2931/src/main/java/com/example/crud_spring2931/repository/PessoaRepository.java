@@ -7,7 +7,4 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 // Jpa gera automaticamente
 //save(), findAll(), findById()
 //deleteById()
-
-
-
 }
