@@ -1,0 +1,128 @@
+{
+  "info": {
+    "_postman_id": "eecf6429-052d-4d3c-a888-c88834d8e75e",
+    "name": "sistemaAluno",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54503887",
+    "_collection_link": "https://go.postman.co/collection/54503887-eecf6429-052d-4d3c-a888-c88834d8e75e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "inserir",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\r\n    \"nome\": \"Carlos\",\r\n    \"idade\": 30,\r\n    \"curso\": \"Administração\",\r\n    \"matricula\":\"19285\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/aluno",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "aluno"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listar",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/aluno",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "aluno"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "atualizar",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nome\": \"André\",\r\n    \"idade\": 28,\r\n    \"curso\": \"Eng. de Software\",\r\n    \"matricula\": \"37465\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/aluno/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "aluno",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "excluir",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/aluno/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "aluno",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
